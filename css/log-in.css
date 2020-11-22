@@ -60,16 +60,16 @@
           box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 html, body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
-  color: #001F33;
   font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+  color: #001F33;
   overflow-x: hidden;
 }
 
@@ -79,11 +79,6 @@ h1, h2, h3 {
 
 h4 {
   font-weight: 400;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 #logIn-container {

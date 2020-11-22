@@ -1,25 +1,25 @@
+// : importing fonts
 @import "josefinFont";
 @import "limelightFonts";
+
+// : importing resets
 @import "resets";
 
+// : styles to apply to whole body
 html, body {
     font-family: "Josefin Sans", sans-serif;
     font-weight: 300;
+    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));   // -- for responsive fonts
     color: $dark-blue;
-    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
 
     overflow-x: hidden;
 }
 
+// : heading styles
 h1, h2, h3 {
     font-family: "Limelight", serif;
 }
 
 h4 {
     font-weight: 400;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
 }

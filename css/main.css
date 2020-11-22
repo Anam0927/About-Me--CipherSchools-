@@ -60,16 +60,16 @@
           box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 html, body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
-  color: #001F33;
   font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+  color: #001F33;
   overflow-x: hidden;
 }
 
@@ -79,11 +79,6 @@ h1, h2, h3 {
 
 h4 {
   font-weight: 400;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 nav {
@@ -112,6 +107,10 @@ nav ul {
   font-weight: 100;
 }
 
+nav li:nth-of-type(3) {
+  opacity: 0;
+}
+
 nav a {
   -webkit-transition: color 0.5s ease;
   transition: color 0.5s ease;
@@ -123,14 +122,13 @@ nav a:hover {
 
 main section {
   min-height: 100vh;
-  padding: 15% 2rem 5%;
+  padding: 15% 2rem 10%;
   position: relative;
 }
 
 #hero {
   background-color: #001F33;
   color: #fff;
-  padding-top: 2rem;
   height: 100vh;
   position: relative;
 }
@@ -161,25 +159,25 @@ main section {
   position: absolute;
   bottom: 50%;
   left: 2.5rem;
-  display: inline-block;
-  font-size: 2.25rem;
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
+  display: inline-block;
   width: 25%;
+  font-size: 2.75rem;
 }
 
 #hero .desc {
   position: absolute;
   top: 50%;
   right: 2.5rem;
-  display: inline-block;
-  font-size: 2.25rem;
-  font-family: "Josefin Sans", sans-serif;
-  line-height: 1.25;
-  text-align: right;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  display: inline-block;
+  font-size: 2.5rem;
   width: 25%;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: right;
+  line-height: 1.25;
 }
 
 #hero .desc p span:nth-child(1) {
@@ -198,17 +196,16 @@ main section {
 }
 
 #hero .scroll-icon {
-  width: 1rem;
   position: absolute;
   bottom: 2rem;
   left: 50%;
   -webkit-transform: translatex(-50%);
           transform: translatex(-50%);
+  width: 1rem;
 }
 
 #hero .scroll-icon svg {
   fill: #fff;
-  width: 100%;
 }
 
 #hero .scroll-icon svg path#Arrow {
@@ -239,13 +236,49 @@ main section {
 }
 
 .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.item .description {
+  border-width: 1px;
+  border-style: solid;
+  padding: 3rem 2.5rem 3.5rem;
+  line-height: 2;
+  position: relative;
+}
+
+.item .title-div {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  width: 18rem;
+  padding: 2rem;
+}
+
+.item .btn {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  padding: 0.5rem 0.75rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+.item .btn:hover, .item .btn:focus, .item .btn:active {
+  outline: none;
+}
+
+#about {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.9))), url("../Assets/GradientTriangle-original.svg");
   background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)), url("../Assets/GradientTriangle-original.svg");
   background-repeat: no-repeat;
   background-position: right top;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  background-size: contain;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -254,56 +287,39 @@ main section {
           align-items: center;
 }
 
-.item .description {
-  border: 1px solid #005B97;
-  padding: 3rem 2.5rem 3.5rem;
-  line-height: 2;
+#about .description {
+  border-color: #005B97;
   width: 50%;
-  position: relative;
-  -webkit-transform: translatex(-15%);
-          transform: translatex(-15%);
+  -webkit-transform: translateX(-15%);
+          transform: translateX(-15%);
 }
 
-.item .title-div {
-  position: absolute;
-  display: inline-block;
-  background-color: #005B97;
-  color: #fff;
-  width: 18rem;
-  padding: 2rem;
-  top: 0;
+#about .title-div {
   right: 0;
   -webkit-transform: translate(50%, -50%);
           transform: translate(50%, -50%);
-}
-
-.item .desc-btn {
-  padding: 0.5rem 0.75rem;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 400;
-  color: #fff;
-  position: relative;
-  left: 68%;
-  top: 1rem;
-  border: 1px solid transparent;
   background-color: #005B97;
-  -webkit-transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out, color 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out, color 0.3s ease-in-out;
-  cursor: pointer;
 }
 
-.item .desc-btn:hover, .item .desc-btn:focus, .item .desc-btn:active {
+#about .desc-btn {
+  background-color: #005B97;
+  color: #fff;
+  border: 1px solid transparent;
+  -webkit-transition-property: background-color, border;
+  transition-property: background-color, border;
+}
+
+#about .desc-btn:hover, #about .desc-btn:focus, #about .desc-btn:active {
   background-color: #fff;
   border: 1px solid #005B97;
   color: #005B97;
-  outline: none;
 }
 
 #skills {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 31, 51, 0.5)), to(rgba(0, 31, 51, 0.8))), url("../Assets/GradientTriangle-Shadow.svg"), #001F33;
   background: linear-gradient(rgba(0, 31, 51, 0.5), rgba(0, 31, 51, 0.8)), url("../Assets/GradientTriangle-Shadow.svg"), #001F33;
   background-repeat: no-repeat;
-  background-position: right top;
+  background-position: left top;
   background-size: cover;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -312,12 +328,19 @@ main section {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #fff;
 }
 
 #skills .description {
-  border: 1px solid #00998A;
+  border-color: #00998A;
   width: 70%;
+}
+
+#skills .title-div {
+  background-color: #00998A;
 }
 
 #skills .skills-list {
@@ -333,16 +356,18 @@ main section {
 }
 
 #skills .skills-list li {
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
   font-weight: 400;
   text-decoration: underline;
   -webkit-text-decoration-color: rgba(255, 255, 255, 0);
           text-decoration-color: rgba(255, 255, 255, 0);
+  -webkit-transition: color, -webkit-text-decoration-color 0.5s ease-in-out;
+  transition: color, -webkit-text-decoration-color 0.5s ease-in-out;
+  transition: color, text-decoration-color 0.5s ease-in-out;
+  transition: color, text-decoration-color 0.5s ease-in-out, -webkit-text-decoration-color 0.5s ease-in-out;
 }
 
 #skills .skills-list li span {
-  text-transform: lowercase;
+  font-weight: 300;
 }
 
 #skills .skills-list li:hover {
@@ -352,13 +377,9 @@ main section {
   cursor: default;
 }
 
-#skills .title-div {
-  background-color: #00998A;
-}
-
 #skills .tech.description {
-  -webkit-transform: translateX(15%);
-          transform: translateX(15%);
+  -webkit-transform: translateX(10%);
+          transform: translateX(10%);
   padding-bottom: 2rem;
   margin-bottom: 15%;
 }
@@ -371,13 +392,13 @@ main section {
 }
 
 #skills .design.description {
-  -webkit-transform: translateX(-15%);
-          transform: translateX(-15%);
+  -webkit-transform: translatex(-10%);
+          transform: translatex(-10%);
   padding-bottom: 2rem;
 }
 
 #skills .design.description .title-div {
-  left: initial;
+  right: 0;
   -webkit-transform: translate(50%, -50%);
           transform: translate(50%, -50%);
 }
@@ -412,58 +433,53 @@ main section {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-transform: translateX(10%);
-          transform: translateX(10%);
+  -webkit-transform: translateX(20%);
+          transform: translateX(20%);
 }
 
 #projects .title-div {
   left: 0;
   text-align: right;
+  background-color: #005B97;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
 
-#projects h4 {
-  font-weight: 700;
-}
-
 #projects .git-btn {
-  padding: 0.5rem;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 400;
   color: #005B97;
   border: none;
   width: 50%;
   background-color: #fff;
-  -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  cursor: pointer;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
 }
 
 #projects .git-btn:hover, #projects .git-btn:focus, #projects .git-btn:active {
   background-color: #005B97;
   color: #fff;
-  outline: none;
 }
 
-#projects .project1 {
+#projects .project-item {
   width: 100%;
-  height: 50%;
   border: 1px solid #99FFF5;
+  margin-bottom: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 3rem;
 }
 
-#projects .project1 .text {
+#projects .project-item .text {
   width: 60%;
   padding: 2rem;
   background-color: rgba(153, 255, 245, 0.25);
 }
 
-#projects .project1 .text p {
+#projects .project-item .text p {
   margin-bottom: 1rem;
+}
+
+#projects .project-item .image {
+  width: 40%;
 }
 
 #projects .project1 .image {
@@ -472,27 +488,6 @@ main section {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  width: 40%;
-}
-
-#projects .project2 {
-  width: 100%;
-  height: 50vh;
-  border: 1px solid #99FFF5;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 2rem;
-}
-
-#projects .project2 .text {
-  width: 60%;
-  padding: 2rem;
-  background-color: rgba(153, 255, 245, 0.25);
-}
-
-#projects .project2 .text p {
-  margin-bottom: 1rem;
 }
 
 #projects .project2 .image {
@@ -501,25 +496,35 @@ main section {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  width: 40%;
 }
 
 #contact {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 31, 51, 0.5)), to(rgba(0, 31, 51, 0.8))), url("../Assets/GradientTriangle-Shadow.svg"), #001F33;
   background: linear-gradient(rgba(0, 31, 51, 0.5), rgba(0, 31, 51, 0.8)), url("../Assets/GradientTriangle-Shadow.svg"), #001F33;
   background-repeat: no-repeat;
-  background-position: right top;
-  background-size: cover;
+  background-position: left top;
+  background-size: contain;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #99FFF5;
 }
 
 #contact .description {
-  border: 1px solid #00998A;
+  border-color: #00998A;
+  -webkit-transform: translatex(-15%);
+          transform: translatex(-15%);
   width: 50%;
 }
 
 #contact .title-div {
   background-color: #00998A;
+  right: 0;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
 }
 
 #contact .social {
@@ -541,11 +546,8 @@ main section {
 }
 
 #contact .email {
-  line-height: 1.5;
-}
-
-#contact .email p {
   font-size: 1.5rem;
+  line-height: 1.5;
 }
 
 #contact .email a {

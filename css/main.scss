@@ -1,16 +1,23 @@
+// : importing global styles
 @import "global";
 
+// : navbar styles
 nav {
+
+    // -- fixing navbar to the top
     position: fixed;
     top: 0;
     left: 0;
 
     width: 100%;
-    z-index: 100;
+    z-index: 100;   // -- to ensure navbar is always visible
 
-    background-color: rgba($dark-blue, 0.5);
+    background-color: rgba($dark-blue, 0.5);    // -- this property changes according to section
 
+    // -- navbar item list
     ul {
+
+        // to place all links in one row with equal space between
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -23,6 +30,12 @@ nav {
         font-weight: 100;
     }
 
+    // -- li item where triangle will come
+    li:nth-of-type(3) {
+        opacity: 0;
+    }
+
+    // -- hover effects
     a {
         transition: color 0.5s ease;
         
@@ -33,29 +46,39 @@ nav {
 
 }
 
+// : styles applicable to all main sections
 main section {
-    min-height: 100vh;
-    padding: 15% 2rem 5%;
+    min-height: 100vh;      // -- each section should be at least 100vh
+    padding: 15% 2rem 10%;
 
     position: relative;
 }
 
+// : HERO SECTION STYLES
 #hero {
+
+    // -- COLORS
     background-color: $dark-blue;
     color: $white;
-    padding-top: 2rem;
+
     height: 100vh;
 
+    // -- to absolute position name and description
     position: relative;
 
+    // -- ILLUSTRATION CONTAINER STYLES
     .image {
+
+        // Measurements to ensure the illustration is in the center of the whole screen
         height: 100%;
         width: 100%;
 
+        // TO POSITION ILLUSTRATION IN CENTER
         display: flex;
         justify-content: center;
         align-items: center;
 
+        // -- ILLUSTRATION STYLES
         svg {
             width: 75%;
             transform: rotate(-120deg);
@@ -63,70 +86,93 @@ main section {
         }
     }
 
+    // -- NAME STYLES
     .name {
+
+        // Positioning
         position: absolute;
         bottom: 50%;
         left: 2.5rem;
-
-        display: inline-block;
-        font-size: 2.25rem;
         transform: translateY(50%);
 
+        // Sizing
+        display: inline-block;
         width: 25%;
+        font-size: 2.75rem;
+
     }
 
+    // -- DESCRIPTION STYLES
     .desc {
+
+        // Positioning
         position: absolute;
         top: 50%;
         right: 2.5rem;
-
-        display: inline-block;
-        font-size: 2.25rem;
-        font-family: "Josefin Sans", sans-serif;
-        line-height: 1.25;
-        text-align: right;
-
         transform: translateY(-50%);
-
+        
+        // Sizing
+        display: inline-block;
+        font-size: 2.5rem;
         width: 25%;
+        
+        // Font Styles
+        font-family: "Josefin Sans", sans-serif;
+        text-align: right;
+        line-height: 1.25;
 
+        // Specific Word Styles
         p span {
+
+            // full-stack
             &:nth-child(1) {
                 font-weight: 700;
             }
 
+            // developer
             &:nth-child(2) {
                 font-weight: 400;
                 text-decoration: underline;
             }
 
+            // designer
             &:nth-child(3) {
                 font-weight: 100;
                 font-style: italic;
                 font-size: 1.25em;
             }
+
         }
+
     }
 
+    // -- SCROLL ICON STYLES
     .scroll-icon {
-        width: 1rem;
+        
+        // Positioning
         position: absolute;
         bottom: 2rem;
         left: 50%;
-
         transform: translatex(-50%);
+        
+        // Sizing
+        width: 1rem;
 
+        // Styling
         svg {
             fill: #fff;
-            width: 100%;
 
+            // arrow animation
             path#Arrow {
                 animation: upDown 0.5s ease-in-out infinite alternate;
             }
         }
+
     }
+
 }
 
+// -- Scroll Icon - Arrow Animation
 @keyframes upDown {
     from {
         transform: translateY(-3px);
@@ -137,59 +183,118 @@ main section {
     }
 }
 
+// : Common Styling for Each Section
 .item {
+    
+    // -- Aligning Content
+    display: flex;
+    
+    // -- Description Styles (Content Container)
+    .description {
+
+        // Border Styles
+        border-width: 1px;
+        border-style: solid;
+        
+        // Other Styles
+        padding: 3rem 2.5rem 3.5rem;
+        line-height: 2;
+        
+        // To position Title-div
+        position: relative;
+    
+    }
+    
+    // -- Title-div Styles
+    .title-div {
+        
+        // Positioning
+        position: absolute;
+        top: 0;
+        
+        // Font Style
+        color: $white;
+        
+        // Sizing
+        width: 18rem;
+        padding: 2rem;
+        
+    }
+
+    // -- Button Styles
+    .btn {
+
+        // Font Styles
+        font-family: "Josefin Sans", sans-serif;
+        font-weight: 400;
+
+        // Other Styles
+        padding: 0.5rem 0.75rem;
+        margin-top: 1.5rem;
+        cursor: pointer;
+
+        // Transition Styles
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+
+        // Removing Outline
+        &:hover,
+        &:focus,
+        &:active {
+            outline: none;
+        }
+
+    }
+
+}
+
+// : ABOUT SECTION STYLES
+#about {
+    
+    // -- Background Styles
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)), url("../Assets/GradientTriangle-original.svg");
     background-repeat: no-repeat;
     background-position: right top;
+    background-size: contain;
 
-    display: flex;
+    // -- Aligning Content
     justify-content: center;
     align-items: center;
 
-
+    // -- Description Styles (Content Container)
     .description {
-        border: 1px solid $blue;
 
-        padding: 3rem 2.5rem 3.5rem;
-        line-height: 2;
+        // Border Styles
+        border-color: $blue;
 
+        // Sizing
         width: 50%;
-        position: relative;
 
-        transform: translatex(-15%);
+        // Positioning more towards the center
+        transform: translateX(-15%);
+
     }
 
+    // -- Title-div Styles
     .title-div {
-        position: absolute;
-        display: inline-block;
 
-        background-color: $blue;
-        color: $white;
-
-        width: 18rem;
-        padding: 2rem;
-
-        top: 0;
+        // Positioning
         right: 0;
-
         transform: translate(50%, -50%);
+
+        // bg-color
+        background-color: $blue;
+
     }
 
+    // -- Button Styles
     .desc-btn {
-        padding: 0.5rem 0.75rem;
-        font-family: "Josefin Sans", sans-serif;
-        font-weight: 400;
-        color: $white;
-
-        position: relative;
-        left: 68%;
-        top: 1rem;
-
-        border: 1px solid transparent;
+        
         background-color: $blue;
-        transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out, color 0.3s ease-in-out;
+        color: $white;
+        border: 1px solid transparent;
 
-        cursor: pointer;
+        transition-property: background-color, border;
 
         &:hover,
         &:focus,
@@ -197,71 +302,96 @@ main section {
             background-color: $white;
             border: 1px solid $blue;
             color: $blue;
-            outline: none;
         }
     }
+
 }
 
+// : SKILLS SECTION STYLES
 #skills {
+
+    // -- Background Styles
     background: linear-gradient(rgba($dark-blue, 0.5), rgba($dark-blue, 0.8)), url("../Assets/GradientTriangle-Shadow.svg"), $dark-blue;
     background-repeat: no-repeat;
-    background-position: right top;
+    background-position: left top;
     background-size: cover;
 
+    // -- Aligning Content
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
 
+    // -- Font Color
     color: $white;
 
+    // -- Description Styles (General)
     .description {
-        border: 1px solid $teal;
+        border-color: $teal;
 
         width: 70%;
     }
 
-    .skills-list {
-        width: 100%;
-
-        list-style-type: none;
-
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
-        grid-row-gap: 1rem;
-        grid-column-gap: 1.5rem;
-
-        margin-top: 2rem;
-
-        li {
-            transition: all 0.5s ease-in-out;
-            // text-transform: uppercase;
-            font-weight: 400;
-
-            text-decoration: underline;
-            text-decoration-color: rgba($white, 0);
-
-            span {
-                text-transform: lowercase;
-            }
-
-            &:hover {
-                color: $light-blue;
-                text-decoration-color: rgba($light-blue, 1);
-                cursor: default;
-            }
-        }
-
-    }
-
+    // -- Title-div Styles (General)
     .title-div {
         background-color: $teal;
     }
 
-    .tech.description {
-        transform: translateX(15%);
+    // -- Skills List
+    .skills-list {
 
+        // Making sure the list takes up the whole container width
+        width: 100%;
+
+        // Removing bullets
+        list-style-type: none;
+
+        // Grid Layout
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));  // For easy responsiveness
+        grid-row-gap: 1rem;
+        grid-column-gap: 1.5rem;
+
+        // To make sure it doesn't overlap with the title-div
+        margin-top: 2rem;
+
+        // LIST ITEM STYLES
+        li {
+
+            // font styles
+            font-weight: 400;
+            text-decoration: underline;
+            text-decoration-color: rgba($white, 0);
+            
+            // transition styles
+            transition: color, text-decoration-color 0.5s ease-in-out;
+
+            // "basic" style
+            span {
+                font-weight: 300;
+            }
+
+            // hover styles
+            &:hover {
+                color: $light-blue;
+                text-decoration-color: rgba($light-blue, 1);
+                cursor: default;    // no pointer cursor
+            }
+
+        }
+
+    }
+
+    // -- Technical Skills Styles
+    .tech.description {
+
+        // Bringing more towards center
+        transform: translateX(10%);
+
+        // Other styles
         padding-bottom: 2rem;
         margin-bottom: 15%;
 
+        // Title-div styles
         .title-div {
             left: 0;
 
@@ -270,189 +400,230 @@ main section {
         }
     }
 
+    // -- Design Skills Styles
     .design.description {
-        transform: translateX(-15%);
 
+        // Bringing more towards center
+        transform: translatex(-10%);
+
+        // Other Styles
         padding-bottom: 2rem;
 
+        // Title-div styles
         .title-div {
-            left: initial;
+            right: 0;
 
             transform: translate(50%, -50%);
         }
 
+        // A bit different grid layout style
         .skills-list {
             grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
         }
+
     }
+
 }
 
+// : PROJECTS SECTION STYLES
 #projects {
+    
+    // -- Background Styles
     background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.9)), url("../Assets/GradientTriangle-original.svg");
     background-repeat: no-repeat;
     background-position: right top;
     background-size: cover;
 
+    // -- Aligning
     align-items: flex-start;
 
+    // -- Description Styles (General)
     .description {
+
+        // Sizing
         width: 80%;
         padding-top: 5rem;
         padding-bottom: 2rem;
 
+        // Aligning the Projects Divs
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
 
-        transform: translateX(10%);
+        // Bringing more towards center
+        transform: translateX(20%);
+
     }
 
+    // -- Title-div Styles
     .title-div {
         left: 0;
         text-align: right;
 
+        background-color: $blue;
+
         transform: translate(-50%, -50%);
     }
 
-    h4 {
-        font-weight: 700;
-    }
-
+    // -- GitHub Link Button Styles
     .git-btn {
-        padding: 0.5rem;
-        font-family: "Josefin Sans", sans-serif;
-        font-weight: 400;
+
         color: $blue;
 
         border: none;
 
         width: 50%;
         background-color: $white;
-        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-
-        cursor: pointer;
+        transition-property: color, background-color;
 
         &:hover,
         &:focus,
         &:active {
             background-color: $blue;
             color: $white;
-            outline: none;
         }
     }
 
-    .project1 {
+    // -- General Project Item Styles
+    .project-item {
+
+        // Sizing
         width: 100%;
-        height: 50%;
+
+        // Others
         border: 1px solid $light-blue;
-
-        display: flex;
-
         margin-bottom: 3rem;
 
+        // Aligning
+        display: flex;
+
+        // Text Styles
         .text {
+
+            // sizing
             width: 60%;
             padding: 2rem;
 
+            // bg-color
             background-color: rgba($light-blue, 0.25);
 
+            // increasing the space between text and button
             p {
                 margin-bottom: 1rem;
             }
+
         }
+
+        // Image Styles
+        .image {
+            width: 40%;
+        }
+
+    }
+
+    // -- First Project Styles
+    .project1 {
 
         .image {
             background-image: linear-gradient(rgba($blue, 0.3), rgba($blue, 0.3)), url("../Assets/ticTacToe.png");
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center center;
-
-            width: 40%;
         }
+
     }
 
+    // -- Second Project Styles
     .project2 {
-        width: 100%;
-        height: 50vh;
-        border: 1px solid $light-blue;
-
-        display: flex;
-
-        margin-bottom: 2rem;
-
-        .text {
-            width: 60%;
-            padding: 2rem;
-
-            background-color: rgba($light-blue, 0.25);
-
-            p {
-                margin-bottom: 1rem;
-            }
-        }
 
         .image {
             background-image: linear-gradient(rgba($blue, 0.3), rgba($blue, 0.3)), url("../Assets/bodyMuscles.png");
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center center;
-
-            width: 40%;
         }
     }
+
 }
 
+// : CONTACT SECTION STYLES
 #contact {
+
+    // -- Background Styles
     background: linear-gradient(rgba($dark-blue, 0.5), rgba($dark-blue, 0.8)), url("../Assets/GradientTriangle-Shadow.svg"), $dark-blue;
     background-repeat: no-repeat;
-    background-position: right top;
-    background-size: cover;
+    background-position: left top;
+    background-size: contain;
 
+    // -- Aligning
+    justify-content: center;
+    align-items: center;
+
+    // -- Font-color
     color: $light-blue;
 
+    // -- Description Styles
     .description {
-        border: 1px solid $teal;
+        border-color: $teal;
 
+        transform: translatex(-15%);
         width: 50%;
     }
 
+    // -- Title-div Styles
     .title-div {
         background-color: $teal;
+
+        right: 0;
+        transform: translate(50%, -50%)
     }
 
+    // -- Social Icon Styles
     .social {
+
+        // Separating icons and email sections
         margin-bottom: 1rem;
 
+        // SVG Styles
         svg {
+
             width: 3rem;
             margin-right: 1.5rem;
-             
+            
+            // for SVG hover effect
             path {
                 transition: fill 0.5s ease;
             }
+
         }
 
+        // SVG Hover Effect
         a:hover > svg path {
             fill: #fff;
         }
+
     }
 
+    // -- Email Styles
     .email {
+
+        // Font Styles
+        font-size: 1.5rem;
         line-height: 1.5;
 
-        p {
-            font-size: 1.5rem;
-        }
-
+        // Email Link Styles
         a {
             transition: color, text-decoration-color 0.5s ease;
             text-decoration: underline;
             text-decoration-color: rgba($light-blue, 0.25);
         }
 
+        // Email Link Hover Styles
         a:hover {
             color: #fff;
             text-decoration-color: rgba($white, 0.5);
         }
+
     }
+
 }
