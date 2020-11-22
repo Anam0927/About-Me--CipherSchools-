@@ -1,0 +1,18 @@
+// : COLORS
+$dark-blue: #001F33;
+$blue: #005B97;
+$teal: #00998A;
+$light-blue: #99FFF5;
+$white: #fff;
+
+// : RESETS
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}

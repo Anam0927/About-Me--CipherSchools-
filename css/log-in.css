@@ -1,0 +1,207 @@
+/* josefin-sans-300 - latin */
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-300.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-300.eot?#iefix") format("embedded-opentype"), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-300.woff2") format("woff2"), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-300.woff") format("woff"), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-300.ttf") format("truetype"), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-300.svg#JosefinSans") format("svg");
+  /* Legacy iOS */
+}
+
+/* josefin-sans-regular - latin */
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-regular.eot?#iefix") format("embedded-opentype"), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-regular.woff2") format("woff2"), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-regular.woff") format("woff"), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-regular.ttf") format("truetype"), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-regular.svg#JosefinSans") format("svg");
+  /* Legacy iOS */
+}
+
+/* josefin-sans-700 - latin */
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-700.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-700.eot?#iefix") format("embedded-opentype"), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-700.woff2") format("woff2"), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-700.woff") format("woff"), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-700.ttf") format("truetype"), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-700.svg#JosefinSans") format("svg");
+  /* Legacy iOS */
+}
+
+/* josefin-sans-100italic - latin */
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: italic;
+  font-weight: 100;
+  src: url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-100italic.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-100italic.eot?#iefix") format("embedded-opentype"), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-100italic.woff2") format("woff2"), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-100italic.woff") format("woff"), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-100italic.ttf") format("truetype"), url("../Assets/fonts/JosefinSans/josefin-sans-v16-latin-100italic.svg#JosefinSans") format("svg");
+  /* Legacy iOS */
+}
+
+/* limelight-regular - latin */
+@font-face {
+  font-family: 'Limelight';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../Assets/fonts/Limelight/limelight-v11-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("../Assets/fonts/Limelight/limelight-v11-latin-regular.eot?#iefix") format("embedded-opentype"), url("../Assets/fonts/Limelight/limelight-v11-latin-regular.woff2") format("woff2"), url("../Assets/fonts/Limelight/limelight-v11-latin-regular.woff") format("woff"), url("../Assets/fonts/Limelight/limelight-v11-latin-regular.ttf") format("truetype"), url("../Assets/fonts/Limelight/limelight-v11-latin-regular.svg#Limelight") format("svg");
+  /* Legacy iOS */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+html, body {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  color: #001F33;
+  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: "Limelight", serif;
+}
+
+h4 {
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#logIn-container {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.log-in {
+  width: 50%;
+  background-color: #fff;
+  padding: 3rem;
+}
+
+.log-in p {
+  margin: 4rem auto 2rem;
+  font-weight: 400;
+}
+
+.log-in form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.log-in form input[type="text"],
+.log-in form input[type="password"] {
+  width: 100%;
+  margin-bottom: 2rem;
+  border: 1px solid #99FFF5;
+  padding: 0.5rem 1rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  color: #001F33;
+}
+
+.log-in form input[type="text"]:focus,
+.log-in form input[type="password"]:focus {
+  outline: none;
+  border-color: #00998A;
+}
+
+.log-in form input[type="text"]::-webkit-input-placeholder,
+.log-in form input[type="password"]::-webkit-input-placeholder {
+  font-weight: 300;
+  color: #001F33;
+  opacity: 0.7;
+}
+
+.log-in form input[type="text"]:-ms-input-placeholder,
+.log-in form input[type="password"]:-ms-input-placeholder {
+  font-weight: 300;
+  color: #001F33;
+  opacity: 0.7;
+}
+
+.log-in form input[type="text"]::-ms-input-placeholder,
+.log-in form input[type="password"]::-ms-input-placeholder {
+  font-weight: 300;
+  color: #001F33;
+  opacity: 0.7;
+}
+
+.log-in form input[type="text"]::placeholder,
+.log-in form input[type="password"]::placeholder {
+  font-weight: 300;
+  color: #001F33;
+  opacity: 0.7;
+}
+
+.log-in form input[type="submit"] {
+  width: 40%;
+  padding: 0.5rem 0.75rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  border: none;
+  background-color: #005B97;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.log-in form input[type="submit"]:hover, .log-in form input[type="submit"]:focus, .log-in form input[type="submit"]:active {
+  background-color: #00998A;
+  outline: none;
+}
+
+#side-logo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  background-color: #001F33;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#side-logo img {
+  height: 90%;
+}
+/*# sourceMappingURL=log-in.css.map */

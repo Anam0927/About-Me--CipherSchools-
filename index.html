@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+
+    <!-- : font preloads -->
+    <link rel="preload" as="font" type="font/woff2"
+        href="./Assets/fonts/JosefinSans/josefin-sans-v16-latin-100italic.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="./Assets/fonts/JosefinSans/josefin-sans-v16-latin-300.woff2"
+        crossorigin>
+    <link rel="preload" as="font" type="font/woff2"
+        href="./Assets/fonts/JosefinSans/josefin-sans-v16-latin-regular.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="./Assets/fonts/JosefinSans/josefin-sans-v16-latin-700.woff2"
+        crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="./Assets/fonts/Limelight/limelight-v11-latin-regular.woff2"
+        crossorigin>
+
+    <!-- : link stylesheet -->
+    <link rel="stylesheet" href="./css/log-in.css">
+</head>
+
+<body>
+    <div id="logIn-container">
+        <main class="log-in">
+            <h1>Welcome to My Site</h1>
+            <p>Please Log In to Continue</p>
+            <form action="./main.html">
+                <input type="text" name="uName" placeholder="Enter your Username" required>
+                <input type="password" name="pswd" placeholder="Enter your password" required>
+                <input type="submit" value="Log In">
+            </form>
+        </main>
+        <aside id="side-logo">
+            <img src="./Assets/LOGO.svg" alt="Logo">
+        </aside>
+    </div>
+</body>
+
+</html>
